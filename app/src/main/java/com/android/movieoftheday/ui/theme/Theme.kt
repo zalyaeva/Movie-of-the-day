@@ -1,10 +1,12 @@
 package com.android.movieoftheday.ui.theme
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
@@ -12,19 +14,17 @@ private val DarkColorPalette = darkColors(
     secondary = Purple100
 )
 
+@SuppressLint("ConflictingOnColor")
 private val LightColorPalette = lightColors(
     primary = Purple500,
     primaryVariant = Purple700,
-    secondary = Purple100
-
-    /* Other default colors to override
-    background = Color.White,
+    secondary = Purple100,
+    background = Purple700,
     surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
+    onPrimary = Violet400,
+    onSecondary = Violet700,
+    onBackground = Violet400,
+    onSurface = Color.Black
 )
 
 @Composable
