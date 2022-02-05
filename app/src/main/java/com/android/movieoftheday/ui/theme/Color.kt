@@ -2,6 +2,13 @@ package com.android.movieoftheday.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+val background = Color(0xFF2F004F)
+val accent = Color(0xFF5F0A87)
+val onSecondary = Color(0xFFEABFCB)
+//val accent = Color(0xFFC191A1)
+val secondary = Color(0xFFA4508B)
+val onBackground = Color(0xFFEFE5F0)
+
 val Purple200 = Color(0xFF695E93)
 val Purple500 = Color(0xFF8155BA)
 val Purple700 = Color(0xFF281C2D)
