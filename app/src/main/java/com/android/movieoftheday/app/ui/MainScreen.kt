@@ -1,4 +1,4 @@
-package com.android.movieoftheday.ui
+package com.android.movieoftheday.app.ui
 
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -9,7 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.android.movieoftheday.model.NavigationItem
-import com.android.movieoftheday.ui.theme.MovieOfTheDayTheme
+import com.android.movieoftheday.app.ui.theme.MovieOfTheDayTheme
 
 @Composable
 fun MainScreen(
@@ -36,9 +36,7 @@ fun BottomNavigationBar(navController: NavController) {
         val currentRoute = navBackStackEntry?.destination?.route
         items.forEach { item ->
             BottomNavigationItem(
-                icon = {
-                    Icon(painterResource(id = item.icon), contentDescription = item.title)
-                },
+                icon = { Icon(painterResource(id = item.icon), contentDescription = item.title) },
                 selectedContentColor = MaterialTheme.colors.onSecondary,
                 unselectedContentColor = MaterialTheme.colors.secondary.copy(0.4f),
                 alwaysShowLabel = true,

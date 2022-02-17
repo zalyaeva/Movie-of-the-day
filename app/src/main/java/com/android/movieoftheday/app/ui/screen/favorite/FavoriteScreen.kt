@@ -1,4 +1,4 @@
-package com.android.movieoftheday.ui.screen.home
+package com.android.movieoftheday.app.ui.screen.favorite
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -9,17 +9,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
-class HomeFragment {
-}
-
 @Composable
-fun HomeScreen() {
+fun FavoriteScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -27,7 +23,7 @@ fun HomeScreen() {
             .wrapContentSize(Alignment.Center)
     ) {
         Text(
-            text = "Home View",
+            text = "Favorite View",
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colors.onBackground,
             modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -40,5 +36,5 @@ fun HomeScreen() {
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
-    HomeScreen()
+    FavoriteScreen()
 }

@@ -1,4 +1,4 @@
-package com.android.movieoftheday.ui.theme
+package com.android.movieoftheday.app.ui.theme
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.isSystemInDarkTheme

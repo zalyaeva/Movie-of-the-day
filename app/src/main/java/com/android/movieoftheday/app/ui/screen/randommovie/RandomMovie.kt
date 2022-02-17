@@ -1,4 +1,4 @@
-package com.android.movieoftheday.ui.screen.randommovie
+package com.android.movieoftheday.app.ui.screen.randommovie
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -13,11 +13,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.android.movieoftheday.model.NavigationItem
-import com.android.movieoftheday.ui.theme.MovieOfTheDayTheme
-
-class RandomMovieFragment {
-}
 
 @Composable
 fun RandomMovieScreen() {

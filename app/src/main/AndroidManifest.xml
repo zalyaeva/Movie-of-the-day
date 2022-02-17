@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.movieoftheday">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +13,7 @@
         android:allowBackup="true"
         android:fullBackupContent="true">
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.android.movieoftheday.app.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MyApplication.NoActionBar">

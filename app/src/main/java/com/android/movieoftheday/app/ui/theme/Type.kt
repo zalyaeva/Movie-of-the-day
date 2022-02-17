@@ -1,4 +1,4 @@
-package com.android.movieoftheday.ui.theme
+package com.android.movieoftheday.app.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
