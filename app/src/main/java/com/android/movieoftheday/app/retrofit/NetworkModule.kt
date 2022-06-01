@@ -1,6 +1,5 @@
 package com.android.movieoftheday.app.retrofit
 
-import androidx.annotation.NonNull
 import com.android.movieoftheday.BuildConfig
 import com.android.movieoftheday.data.MovieApi
 import dagger.Module
@@ -24,7 +23,7 @@ class NetworkModule {
     companion object {
 
         private const val BASE_URL = "https://api.themoviedb.org/3/"
-        private const val API_KEY = "5d190a4676660309ee5187b997f90f2c"
+        const val API_KEY = "5d190a4676660309ee5187b997f90f2c"
 
         private const val TIMEOUT_SECONDS = 60L
         private const val LOGGING_INTERCEPTOR = "loggingInterceptor"

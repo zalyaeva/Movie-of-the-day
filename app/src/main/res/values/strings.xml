@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Movie of the day</string>
+
+    <string name="error">Ошибка</string>
+    <string name="error_description">Неожиданные проблемы с сервером</string>
+
 </resources>
