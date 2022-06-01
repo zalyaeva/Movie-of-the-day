@@ -1,37 +1,55 @@
 package com.android.movieoftheday.app.ui.screen.randommovie
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.android.movieoftheday.app.retrofit.Result
 import com.android.movieoftheday.data.MovieSource
+import com.android.movieoftheday.model.ErrorResponse
+import com.android.movieoftheday.model.Movie
+import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.Channel.Factory.UNLIMITED
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import javax.inject.Inject
+
 
 @HiltViewModel
 class RandomMovieViewModel @Inject constructor(
     private val movieSource: MovieSource
 ) : ViewModel() {
 
-    var state by mutableStateOf(MovieContract.State(movie = null, isLoading = true))
-        private set
+    private val _randomMovie = MutableLiveData<Result<Movie>>()
+    val randomMovie: LiveData<Result<Movie>> = _randomMovie
 
-    var effects = Channel<MovieContract.Effect>(UNLIMITED)
-        private set
-
-    init {
-        viewModelScope.launch { getFoodCategories() }
+    private suspend fun subscribeLifecycle() {
+        getFoodCategories()
     }
 
     private suspend fun getFoodCategories() {
-        val randomMovie = movieSource.getRandomMovie()
+        _randomMovie.postValue(Result.Loading)
         viewModelScope.launch {
-            state = state.copy(movie = randomMovie, isLoading = false)
-            effects.send(MovieContract.Effect.DataLoaded)
+            try {
+                _randomMovie.postValue(movieSource.getRandomMovie())
+            } catch (exception: Exception) {
+                val errorMessage = if (exception is HttpException) {
+                    val errorResponse: ErrorResponse =
+                        Gson().fromJson(
+                            exception.response()?.errorBody()?.charStream(),
+                            ErrorResponse::class.java
+                        )
+                    errorResponse.statusMessage
+                } else {
+                    "Неизвестная ошибка"
+                }
+
+                _randomMovie.postValue(Result.Failure(errorString = errorMessage))
+            }
         }
+    }
+
+    fun refresh() {
+        viewModelScope.launch { subscribeLifecycle() }
     }
 }

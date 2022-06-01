@@ -16,9 +16,6 @@ fun Navigation(navController: NavHostController) {
     NavHost(navController, startDestination = NavigationItem.Home.route) {
         composable(NavigationItem.Home.route) { HomeScreen() }
         composable(NavigationItem.Favorites.route) { FavoriteScreen() }
-        composable(NavigationItem.RandomMovie.route) {
-            val viewModel: RandomMovieViewModel = hiltViewModel()
-            RandomMovieScreen(viewModel.state, viewModel.effects.receiveAsFlow())
-        }
+        composable(NavigationItem.RandomMovie.route) { RandomMovieScreen() }
     }
 }
