@@ -29,10 +29,17 @@
         <entry key="../../../../layout/compose-model-1654079265321.xml" value="0.25" />
         <entry key="../../../../layout/compose-model-1654079265325.xml" value="0.1" />
         <entry key="../../../../layout/compose-model-1654081822973.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1654084881679.xml" value="0.17841915382092488" />
+        <entry key="../../../../layout/compose-model-1654085464855.xml" value="0.335" />
+        <entry key="../../../../layout/compose-model-1654165489543.xml" value="0.1596743894802755" />
+        <entry key="../../../../layout/compose-model-1654165489627.xml" value="0.17031934877896054" />
+        <entry key="../../../../layout/compose-model-1654165829992.xml" value="0.335" />
         <entry key="app/src/main/res/drawable/ic_favorite.xml" value="0.2696629213483146" />
         <entry key="app/src/main/res/drawable/ic_movie.xml" value="0.24722222222222223" />
         <entry key="app/src/main/res/drawable/ic_movie_error_load.xml" value="0.278125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2222222222222222" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1455" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1455" />
       </map>
     </option>
   </component>

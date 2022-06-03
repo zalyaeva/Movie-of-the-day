@@ -3,5 +3,7 @@
 
     <string name="error">Ошибка</string>
     <string name="error_description">Неожиданные проблемы с сервером</string>
+    <string name="error_retry">Повторить</string>
 
+    <string name="text_rating">Рейтинг: </string>
 </resources>

@@ -3,4 +3,8 @@
     <dimen name="small">8dp</dimen>
     <dimen name="standard">16dp</dimen>
     <dimen name="big">24dp</dimen>
+
+    <dimen name="small_text">14sp</dimen>
+    <dimen name="medium_text">16sp</dimen>
+    <dimen name="big_text">24sp</dimen>
 </resources>

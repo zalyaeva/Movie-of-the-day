@@ -10,6 +10,10 @@ val secondary = Color(0xFFAE3CB9)
 //val secondary = Color(0xFFA4508B)
 val onBackground = Color(0xFFEFE5F0)
 
+val ratingGood = Color(0xFFB2FF59)
+val ratingNormal = Color(0xFFFFD740)
+val ratingBad = Color(0xFFFF6E40)
+
 val Purple200 = Color(0xFF695E93)
 val Purple500 = Color(0xFF8155BA)
 val Purple700 = Color(0xFF281C2D)

@@ -11,9 +11,19 @@ import kotlin.system.measureTimeMillis
 
 
 @Singleton
-class MovieSource @Inject constructor(private val movieApi: MovieApi) {
+class MovieSource @Inject constructor(
+    private val movieApi: MovieApi
+) {
 
     private val standardMaxMovieCount = 900000L
+
+    suspend fun getMovieList(page: Int): Result<List<Movie>> = withContext(Dispatchers.IO) {
+        return@withContext try {
+            Result.Success(movieApi.getMovieList(page))
+        } catch (exception: Exception) {
+            Result.Failure(exception)
+        }
+    }
 
     private suspend fun getLastMovieId(): Result<Long> = withContext(Dispatchers.IO) {
         return@withContext try {
