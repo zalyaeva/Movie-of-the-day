@@ -1,4 +1,4 @@
-package com.android.movieoftheday.model
+package com.android.movieoftheday.model.base
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,5 +1,6 @@
 package com.android.movieoftheday.app.ui
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -14,11 +15,14 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.paging.ExperimentalPagingApi
 import com.android.movieoftheday.R
 import com.android.movieoftheday.app.ui.theme.MovieOfTheDayTheme
-import com.android.movieoftheday.model.NavigationItem
+import com.android.movieoftheday.model.base.NavigationItem
 
 @Composable
+@ExperimentalPagingApi
+@ExperimentalFoundationApi
 fun MainScreen(
     scaffoldState: ScaffoldState = rememberScaffoldState()
 ) {
@@ -40,13 +44,14 @@ fun BottomNavigationBar(navController: NavController) {
             shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)
             clip = true
         },
-        contentColor = MaterialTheme.colors.onPrimary
+        contentColor = MaterialTheme.colors.onPrimary,
+        backgroundColor = MaterialTheme.colors.primary
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         items.forEach { screen ->
             BottomNavigationItem(
-                icon = { Icon(painterResource(id = screen.icon), contentDescription = screen.title) },
+                icon = { Icon(painterResource(id = screen.icon!!), contentDescription = screen.title) },
                 selectedContentColor = colorResource(id = R.color.accentViolet),
                 unselectedContentColor = colorResource(id = R.color.primaryViolet),
                 alwaysShowLabel = true,
@@ -78,6 +83,8 @@ fun BottomNavigationBar(navController: NavController) {
 
 @Preview(showBackground = true)
 @Composable
+@ExperimentalPagingApi
+@ExperimentalFoundationApi
 fun MainScreenPreview() {
     MainScreen()
 }

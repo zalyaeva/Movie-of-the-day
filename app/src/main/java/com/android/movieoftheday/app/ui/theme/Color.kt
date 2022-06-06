@@ -2,13 +2,14 @@ package com.android.movieoftheday.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val background = Color(0xFF2F004F)
-val accent = Color(0xFF5F0A87)
-val onSecondary = Color(0xFFEABFCB)
-//val accent = Color(0xFFC191A1)
-val secondary = Color(0xFFAE3CB9)
-//val secondary = Color(0xFFA4508B)
-val onBackground = Color(0xFFEFE5F0)
+val background = Color(0xFF9A90C2)
+val accent = Color(0xFF9972DE)
+val onSecondary = Color(0x8AEDE7F6)
+val accentVariant = Color(0xFFEBE0FE)
+val secondary = Color(0xFF8155BA)
+val secondaryVariant = Color(0xFF695E93)
+val onBackground = Color(0xFF281C2D)
+val onPrimary = Color(0xFF323E42)
 
 val ratingGood = Color(0xFFB2FF59)
 val ratingNormal = Color(0xFFFFD740)

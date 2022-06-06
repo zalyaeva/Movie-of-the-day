@@ -1,40 +1,49 @@
 package com.android.movieoftheday.app.ui.screen.home
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import androidx.paging.ExperimentalPagingApi
+import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
+import com.android.movieoftheday.app.ui.component.CreateMovieList
+import com.android.movieoftheday.app.ui.component.CreateSmallMovieCard
+import com.android.movieoftheday.app.ui.theme.MovieOfTheDayTheme
+import com.android.movieoftheday.model.Movie
 
+@ExperimentalFoundationApi
 @Composable
-fun HomeScreen() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colors.background)
-            .wrapContentSize(Alignment.Center)
-    ) {
-        Text(
-            text = "Home View",
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colors.onBackground,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            textAlign = TextAlign.Center,
-            fontSize = 25.sp
-        )
-    }
+@ExperimentalPagingApi
+fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navController: NavController?) {
+    val topRatedMovieList = viewModel.getTopRatedMovieList().collectAsLazyPagingItems()
+    CreateMovieList(
+        list = topRatedMovieList, navController = navController
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
+@ExperimentalPagingApi
+@ExperimentalFoundationApi
 fun HomeScreenPreview() {
-    HomeScreen()
+    HomeScreen(hiltViewModel(), null)
+}
+
+@Composable
+@Preview(showBackground = true)
+fun ItemMoviePreview() {
+    MovieOfTheDayTheme {
+        CreateSmallMovieCard(
+            movie = Movie(
+                0,
+                title = "Социальная сеть",
+                overview = "Лучший фильм Джесси Айзенберга, который сыграл Марка Цукерберга.",
+                posterPath = "w1280/kMDBYLPGpInOJWb29SDB8Du8Pey.jpg",
+                voteAverage = 5.4
+            ), navController = null
+        )
+    }
 }

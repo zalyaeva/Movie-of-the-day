@@ -1,4 +1,4 @@
-package com.android.movieoftheday.app.retrofit
+package com.android.movieoftheday.app.di
 
 import com.android.movieoftheday.BuildConfig
 import com.android.movieoftheday.data.MovieApi
@@ -18,16 +18,12 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
+object NetworkModule {
 
-    companion object {
+    private const val BASE_URL = "https://api.themoviedb.org/3/"
 
-        private const val BASE_URL = "https://api.themoviedb.org/3/"
-        const val API_KEY = "5d190a4676660309ee5187b997f90f2c"
-
-        private const val TIMEOUT_SECONDS = 60L
-        private const val LOGGING_INTERCEPTOR = "loggingInterceptor"
-    }
+    private const val TIMEOUT_SECONDS = 60L
+    private const val LOGGING_INTERCEPTOR = "loggingInterceptor"
 
     @Provides
     @Singleton

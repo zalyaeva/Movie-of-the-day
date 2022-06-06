@@ -26,7 +26,7 @@ import androidx.lifecycle.LifecycleOwner
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.android.movieoftheday.R
-import com.android.movieoftheday.app.retrofit.Result
+import com.android.movieoftheday.model.base.Result
 import com.android.movieoftheday.app.ui.component.CreateDescriptionMovie
 import com.android.movieoftheday.app.ui.component.CreateNameMovie
 import com.android.movieoftheday.app.ui.component.CreateRating

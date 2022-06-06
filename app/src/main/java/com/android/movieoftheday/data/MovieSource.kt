@@ -1,7 +1,8 @@
 package com.android.movieoftheday.data
 
-import com.android.movieoftheday.app.retrofit.Result
+import com.android.movieoftheday.model.base.Result
 import com.android.movieoftheday.model.Movie
+import com.android.movieoftheday.model.base.ListResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -17,7 +18,7 @@ class MovieSource @Inject constructor(
 
     private val standardMaxMovieCount = 900000L
 
-    suspend fun getMovieList(page: Int): Result<List<Movie>> = withContext(Dispatchers.IO) {
+    suspend fun getMovieList(page: Int): Result<ListResult> = withContext(Dispatchers.IO) {
         return@withContext try {
             Result.Success(movieApi.getMovieList(page))
         } catch (exception: Exception) {

@@ -17,8 +17,10 @@ private val DarkColorPalette = darkColors(
 @SuppressLint("ConflictingOnColor")
 private val LightColorPalette = lightColors(
     primary = accent,
-    onPrimary = onSecondary,
+    primaryVariant = accentVariant,
+    onPrimary = onPrimary,
     secondary = secondary,
+    secondaryVariant = secondaryVariant,
     background = background,
     surface = Color.White,
     onSecondary = onSecondary,

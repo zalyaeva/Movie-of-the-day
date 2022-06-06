@@ -6,8 +6,8 @@
     <color name="onSecondary">#EABFCB</color>
     <color name="onBackground">#EFE5F0</color>
 
-    <color name="primaryViolet">#B01159</color>
-    <color name="accentViolet">#FFF50057</color>
+    <color name="primaryViolet">#FF281C2D</color>
+    <color name="accentViolet">#EBE0FE</color>
     <color name="secondaryViolet">#FFFF80AB</color>
 
     <color name="black">#FF000000</color>

@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.movieoftheday.app.retrofit.Result
+import com.android.movieoftheday.model.base.Result
 import com.android.movieoftheday.data.MovieSource
-import com.android.movieoftheday.model.ErrorResponse
+import com.android.movieoftheday.model.base.ErrorResponse
 import com.android.movieoftheday.model.Movie
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
